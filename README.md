@@ -1,64 +1,93 @@
-**Week 5: Real-Time Communication with Socket.io**
+#GROUP 9
+# Real-Time Collaborative Notes App
 
-**Objective:**
+## Overview
+This project is a real-time collaborative note-taking application that allows multiple users to create, edit, and view notes in real time. It utilizes **Socket.io** for WebSocket communication and is built on the **MERN stack** (MongoDB, Express.js, React, Node.js).
 
-- Develop a real-time web application utilizing Socket.io.
-- Apply concepts of WebSockets, rooms, and namespaces.
-- Understand how to integrate real-time functionality into a full-stack MERN application.
+## Features
+- Users can join specific "rooms" to collaborate on shared notes.
+- Real-time updates when another user edits the note.
+- Ability to create new notes and edit existing ones.
+- Notifications when a new user joins or leaves a room.
+- List of online users in each room.
 
-**Project Suggestion:** Build a "Real-Time Collaborative Notes" application that allows multiple users to create, edit, and view notes in real time.
+## Tech Stack
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Node.js, Express.js, Socket.io
+- **Database:** MongoDB
+- **Deployment:** Backend (Render), Frontend (Vercel)
 
-**Instructions:**
+## Setup Instructions
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (v16+ recommended)
+- MongoDB (local or cloud-based)
+- Git
 
-1. **Project Setup:**
-   - Create a new project folder named `real-time-notes`.
-   - Set up a backend using Express.js and Socket.io.
-   - Initialize a frontend using React.
+### Installation
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/real-time-notes.git
+   cd real-time-notes
+   ```
 
-2. **Application Features:**
-   - Users should be able to:
-     - Join a specific "room" to collaborate on a shared note.
-     - See real-time updates when another user edits the note.
-     - Create new notes and edit existing ones.
-     - Receive notifications when a new user joins or leaves a room.
+2. **Backend Setup:**
+   ```sh
+   cd backend
+   npm install
+   ```
+   - Create a `.env` file in the `backend` directory with the following:
+     ```env
+     PORT=5000
+     MONGO_URI=your_mongodb_connection_string
+     ```
+   - Start the backend server:
+     ```sh
+     npm start
+     ```
 
-3. **Backend Requirements:**
-   - Implement WebSocket connections using Socket.io.
-   - Create RESTful endpoints for saving and retrieving notes.
-   - Implement room-based communication for collaborative editing.
+3. **Frontend Setup:**
+   ```sh
+   cd ../frontend
+   npm install
+   ```
+   - Start the frontend:
+     ```sh
+     npm start
+     ```
 
-4. **Frontend Requirements:**
-   - Implement a UI for creating, viewing, and editing notes.
-   - Allow users to join specific rooms via a unique URL or code.
-   - Display a list of online users in each room.
+## Real-Time Features with Socket.io
+- Users connect via WebSocket when they join a room.
+- Notes are updated in real-time across all connected clients.
+- The server broadcasts changes to all users in the same room.
+- User join/leave notifications are displayed.
 
-5. **State Management:**
-   - Use React state and context API to manage application state.
-   - Handle incoming real-time data efficiently to update UI.
+## Deployment
+### Backend Deployment (Render)
+1. Push your backend code to GitHub.
+2. Deploy to **Render** by linking the GitHub repository.
+3. Set up environment variables on Render.
+4. Deploy and obtain the backend API URL.
 
-6. **Testing:**
-   - Test real-time functionality by opening multiple browser tabs.
-   - Ensure messages and updates are reflected correctly across all clients.
+### Frontend Deployment (Vercel)
+1. Push your frontend code to GitHub.
+2. Deploy to **Vercel** by linking the GitHub repository.
+3. Configure the backend API URL in your `.env` file.
+4. Deploy and get the frontend URL.
 
-7. **Deployment:**
-   - Deploy the backend to a cloud service such as Render.
-   - Deploy the frontend to Vercel.
-   - Ensure proper environment variable setup for production.
+## Testing
+- Open multiple browser tabs and join the same room.
+- Make edits and verify they sync in real time.
+- Check if users are notified when others join/leave.
 
-8. **Documentation:**
-   - Write a `README.md` file including:
-     - Project overview.
-     - Steps to install and run the project.
-     - Explanation of key real-time concepts used.
+## Key Real-Time Concepts Used
+- **WebSockets & Socket.io**: Enables instant bidirectional communication.
+- **Rooms & Namespaces**: Allows grouping users into collaborative sessions.
+- **Event-Driven Programming**: Messages are sent and received based on specific triggers.
 
-9. **Submission:**
-   - Push your project to your GitHub repository.
+## Contribution
+Feel free to fork this repository and submit pull requests!
 
-**Evaluation Criteria:**
-
-- Proper implementation of WebSocket communication.
-- Ability to join rooms and collaborate in real-time.
-- Clean UI and responsive design.
-- Structured and well-documented code.
-- Successful deployment and working application link.
+## License
+This project is licensed under the MIT License.
 
