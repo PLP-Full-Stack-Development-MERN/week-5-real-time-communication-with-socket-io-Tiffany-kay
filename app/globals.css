@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 47 100% 97%;    /* Cream background */
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 60%;      /* Bright blue */
+    --primary-foreground: 47 100% 97%;
+
+    --secondary: 214 32% 91%;    /* Light blue */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 214 32% 91%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 217 91% 60%;       /* Bright blue accent */
+    --accent-foreground: 47 100% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 47 100% 97%;
+
+    --border: 217 91% 60%;       /* Blue border */
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;         /* Blue ring */
+
+    --radius: 0.75rem;           /* Slightly more rounded corners */
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 47 100% 97%;   /* Cream text in dark mode */
+
+    --card: 217 91% 60%;         /* Blue cards in dark mode */
+    --card-foreground: 47 100% 97%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 47 100% 97%;
+
+    --primary: 217 91% 60%;      /* Keep blue as primary */
+    --primary-foreground: 47 100% 97%;
+
+    --secondary: 217 47% 24%;    /* Darker blue secondary */
+    --secondary-foreground: 47 100% 97%;
+
+    --muted: 217 47% 24%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 47 100% 97%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 47 100% 97%;
+
+    --border: 217 91% 60%;
+    --input: 217 47% 24%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Additional custom styles */
+.glass-effect {
+  @apply bg-white/30 backdrop-blur-sm border border-white/20;
+}
+
+.blue-gradient {
+  @apply bg-gradient-to-r from-blue-500 to-blue-600;
+}
+
+.cream-gradient {
+  @apply bg-gradient-to-b from-[#fff9e6] to-[#fff5d6];
+}

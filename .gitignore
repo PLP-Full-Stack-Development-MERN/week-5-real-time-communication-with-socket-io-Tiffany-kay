@@ -1,0 +1,3 @@
+.env
+.dot.env
+/node_modules
